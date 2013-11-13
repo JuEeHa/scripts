@@ -1,0 +1,2 @@
+#!/bin/sh
+telnet ssd.jpl.nasa.gov 6775

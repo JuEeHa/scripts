@@ -1,0 +1,6 @@
+#!/bin/sh
+#test ! -n "$MPVO" && MPVO=fbdev2
+test ! -n "$MPVO" && MPVO=gl
+mplayer -vo $MPVO -framedrop "$@"
+#fast:skiploopfilter=all
+#mplayer -framedrop $*

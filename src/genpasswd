@@ -1,0 +1,2 @@
+#!/bin/sh
+dd if=/dev/random of=/dev/stdout bs=512 count=1 2> /dev/null | sha1sum | cut -d ' ' -f 1

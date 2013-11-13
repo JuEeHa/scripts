@@ -1,0 +1,4 @@
+uri ytdl/$1 || exit 1
+ffmpeg -i ./$1.mp4 ./$1.wav || exit 1
+lame ./$1.wav ./$2 || exit 1
+rm ./$1.wav ./$1.mp4
