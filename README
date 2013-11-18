@@ -1,2 +1,57 @@
 The most useful of my scripts in ~/bin, use at your own risk.
 Most scripts are unmodified, however some have been changed to work with graphical environment.
+
+	alert.sh HH:MM "cmd"
+Executes specified cmd when system clock gets HH:MM
+
+	amdtbl.awk <infile >outfile
+A table extension for Markdown, a fixed version of awk implementation at http://repo.cat-v.org/amdtbl/
+
+	aytdl yturl fname.mp3
+Downloads and converts to mp3 the specified youtube video.
+NOTE: you should execute it on a RAM-based fs
+
+	BUP=bupname bup.sh file0 file1 ... fileN
+Backups stuff to hardcoded dir, change if you want to use.
+
+	clipb.sh [a] [. text]
+If no arguments are specified, it opens `~/.clipbored`, a "extension of clipboard" file. If "a" is specified, it first does `cat >> ~/.clipbored`. If "." is specified it appends all arguments to .clipbored
+
+	fbb url0 url1 ... urlN
+Opens specified urls, in order
+NOTE: hardcoded to `links -g`
+
+	genpasswd
+Generates a nice throwaway password
+
+	git-commit.sh Commit message
+	branch=gitbranch git-commit.sh Commit message
+A hacky script that commits all changes in dir, then pushes either $branch or master
+
+	horizons
+Connects to NASA's horizons database
+
+	install-btw [VERSION]
+	install-btw-client.sh [VERSION]
+	install-btw-server.sh [VERSION]
+Installs the awesome Better Than Wolves Minecraft mod by Flowerchild
+NOTE: hardcoded paths
+
+	ircurls.sh
+Reads a IRC log dump on stdin, then executes fbb witg all the urls as arguments
+
+	mdp2html.sh file.mdp
+Converts files from own, Markdown based .mdo format to html
+
+	mothball.sh dir
+Mothballs dir, then deletes it
+NOTE: hardcoded paths
+
+	vidplay vid0 vid1 ... vidN
+Plays videos using mplayer
+
+	yt yturl0 yturl1 ... yturlN
+Plays youtube videos using youtube-dl and mplayer
+
+	ytdl yturl0 yturl1 ... yturlN
+Saves youtube videos using youtube-dl
