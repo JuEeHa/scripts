@@ -17,6 +17,9 @@ Backups stuff to hardcoded dir, change if you want to use.
 	clipb.sh [a] [. text]
 If no arguments are specified, it opens `~/.clipbored`, a "extension of clipboard" file. If "a" is specified, it first does `cat >> ~/.clipbored`. If "." is specified it appends all arguments to .clipbored
 
+	codetodo.sh [dir0 dir1 ... dirN]
+Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo" (.sh) out of code files in either specified directories or current directory.
+
 	fbb url0 url1 ... urlN
 Opens specified urls, in order
 NOTE: hardcoded to `links -g`
