@@ -21,8 +21,9 @@ If no arguments are specified, it opens `~/.clipbored`, a "extension of clipboar
 Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo" (.sh) out of code files in either specified directories or current directory.
 
 	fbb url0 url1 ... urlN
-Opens specified urls, in order
-NOTE: hardcoded to `links -g`
+Opens specified urls, in order.
+Browser used is specified in $BROWSER with arguments specified in $BROWSER_ARGS. If not set, ones specified in ~/.fbb is used.
+NOTE: If $BROWSER is still unset, it defaults to "links". If $BROWSER_ARGS is not and $BROWSER is "links", it is set to "-g" to make links work in graphical mode.
 
 	genpasswd
 Generates a nice throwaway password

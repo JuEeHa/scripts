@@ -1,5 +1,5 @@
 #!/bin/sh
-. $HOME/.vidplay
+test -e $HOME/.vidplay && . $HOME/.vidplay
 
 test -z "$MPVO" && MPVO=gl
 test -z "$VIDPLAYER" && VIDPLAYER=mplayer
