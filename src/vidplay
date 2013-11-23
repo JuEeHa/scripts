@@ -1,6 +1,13 @@
 #!/bin/sh
 #test ! -n "$MPVO" && MPVO=fbdev2
-test ! -n "$MPVO" && MPVO=gl
-mplayer -vo $MPVO -framedrop "$@"
+test -z "$MPVO" && MPVO=gl
+test -z "$VIDPLAYER" && VIDPLAYER=mplayer
+
+if test "$VIDPLAYER" = mplayer && test -z "$VIDPLAYER_ARGS"
+then
+    VIDPLAYER_ARGS="-vo $MPVO -framedrop"
+fi
+
+"$VIDPLAYER" $VIDPLAYER_ARGS "$@"
 #fast:skiploopfilter=all
 #mplayer -framedrop $*
