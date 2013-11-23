@@ -42,7 +42,7 @@ Installs the awesome Better Than Wolves Minecraft mod by Flowerchild
 NOTE: hardcoded paths
 
 	ircurls.sh
-Reads a IRC log dump on stdin, then executes fbb witg all the urls as arguments
+Reads a IRC log dump on stdin, then executes fbb with all the urls as arguments
 
 	mdp2html.sh file.mdp
 Converts files from own, Markdown based .mdo format to html
