@@ -51,10 +51,12 @@ Mothballs dir, then deletes it
 NOTE: hardcoded paths
 
 	vidplay vid0 vid1 ... vidN
-Plays videos using mplayer
+Plays videos.
+The video player used is the one specified in $VIDPLAYER. If it is not set, the one specified in $XDG_CONFIG_HOME/vidplay/config (i.e. ~/.config/vidplay/config) is used. If that is also unset, mplayer is used. Player arguments may be set using VIDPLAYER_ARGS in the same manner as VIDPLAYER
+NOTE: if VIDPLAYER is unset or mplayer, VIDPLAYER_ARGS is set by default to "-vo $MPVO -frameskip" to ensure backwards compatability. If VIDPLAYER is something else than mplayer, VIDPLAYER_ARGS is empty by default
 
 	yt yturl0 yturl1 ... yturlN
-Plays youtube videos using youtube-dl and mplayer
+Plays youtube videos using youtube-dl and vidplay
 
 	ytdl yturl0 yturl1 ... yturlN
 Saves youtube videos using youtube-dl
