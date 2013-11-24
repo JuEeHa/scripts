@@ -1,11 +1,10 @@
 #!/bin/sh
 test -e $HOME/.vidplay && . $HOME/.vidplay
 
-test -z "$MPVO" && MPVO=gl
-test -z "$VIDPLAYER" && VIDPLAYER=mplayer
-
-if test "$VIDPLAYER" = mplayer && test -z "$VIDPLAYER_ARGS"
+if test -z "$VIDPLAYER" && test -z "$VIDPLAYER_ARGS"
 then
+	test -z "$MPVO" && MPVO=gl
+	VIDPLAYER=mplayer
 	VIDPLAYER_ARGS="-vo $MPVO -framedrop"
 fi
 

@@ -1,9 +1,9 @@
 #!/bin/sh
 test -e $HOME/.fbb && . $HOME/.fbb
 
-test -z "$BROWSER" && BROWSER=links
-if test "$BROWSER" = links && test -z "$BROWSER_ARGS"
+if test -z "$BROWSER" && test -z "$BROWSER_ARGS"
 then
+	BROWSER=links
 	BROWSER_ARGS=-g
 fi
 
