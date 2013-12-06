@@ -22,7 +22,8 @@ Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo"
 
 	fbb url0 url1 ... urlN
 Opens specified urls, in order.
-Browser used is specified in $BROWSER with arguments specified in $BROWSER_ARGS. If not set, ones specified in ~/.fbb is used.
+Browser used is specified in $BROWSER with arguments specified in $BROWSER_ARGS. If not set, the ones specified in ~/.fbb are used.
+NOTE: See vidplay for notes about the config file
 NOTE: If $BROWSER and $BROWSER_ARGS are still unset, fbb defaults to `BROWSER=links BROWSER_ARGS=-g`
 
 	genpasswd
@@ -54,6 +55,7 @@ NOTE: hardcoded paths
 	vidplay vid0 vid1 ... vidN
 Plays videos.
 The video player used is the one specified in $VIDPLAYER. If it is not set, the one specified in ~/.vidplay is used. If that is also unset, mplayer is used. Player arguments may be set using VIDPLAYER_ARGS in the same manner as VIDPLAYER
+NOTE: Settings in ~/.vidplay take precedence over the environment; ~/.vidplay is actually a shell script, so you can use 'test -z "$VAR" && VAR=value.
 NOTE: If $VIDPLAYER and $VIDPLAYER_ARGS are still unset, vidplay defaults to `VIDPLAYER=mplayer VIDPLAYER_ARGS="-vo $MPVO -framedrop"` (MPVO=gl by default)
 
 	yt yturl0 yturl1 ... yturlN
