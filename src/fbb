@@ -1,5 +1,13 @@
 #!/bin/sh
+test -e $HOME/.fbb && . $HOME/.fbb
+
+if test -z "$BROWSER" && test -z "$BROWSER_ARGS"
+then
+	BROWSER=links
+	BROWSER_ARGS=-g
+fi
+
 for i in "$@"
 do
-	links -g $i
+	"$BROWSER" $BROWSER_ARGS "$i"
 done

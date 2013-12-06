@@ -1,20 +1,11 @@
 #!/bin/sh
-if test -n "$XDG_CONFIG_HOME"
-then
-    . $XDG_CONFIG_HOME/vidplay/config
-else
-    . $HOME/.config/vidplay/config
-fi
+test -e $HOME/.vidplay && . $HOME/.vidplay
 
-#test ! -n "$MPVO" && MPVO=fbdev2
-test -z "$MPVO" && MPVO=gl
-test -z "$VIDPLAYER" && VIDPLAYER=mplayer
-
-if test "$VIDPLAYER" = mplayer && test -z "$VIDPLAYER_ARGS"
+if test -z "$VIDPLAYER" && test -z "$VIDPLAYER_ARGS"
 then
-    VIDPLAYER_ARGS="-vo $MPVO -framedrop"
+	test -z "$MPVO" && MPVO=gl
+	VIDPLAYER=mplayer
+	VIDPLAYER_ARGS="-vo $MPVO -framedrop"
 fi
 
 "$VIDPLAYER" $VIDPLAYER_ARGS "$@"
-#fast:skiploopfilter=all
-#mplayer -framedrop $*
