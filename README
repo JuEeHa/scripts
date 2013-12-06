@@ -22,7 +22,7 @@ Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo"
 
 	fbb url0 url1 ... urlN
 Opens specified urls, in order.
-Browser used is specified in $BROWSER with arguments specified in $BROWSER_ARGS. If not set, ones specified in ~/.fbb is used.
+Browser used is specified in $BROWSER with arguments specified in $BROWSER_ARGS. If not set, the ones specified in ~/.fbb are used.
 NOTE: See vidplay for notes about the config file
 NOTE: If $BROWSER and $BROWSER_ARGS are still unset, fbb defaults to `BROWSER=links BROWSER_ARGS=-g`
 
