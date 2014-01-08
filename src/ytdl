@@ -1,5 +1,5 @@
 #!/bin/sh
 for i in "$@"
 do
-	youtube-dl -o $i.mp4 -f 18 --no-part "$i"
+	youtube-dl -o '%(id)s.%(ext)s' --no-part "$i"
 done
