@@ -1,7 +1,12 @@
 #!/bin/sh
+
+geturls() {
+	tr ' ' '\n' | grep http | sed 's/\.$//;s/\,$//'
+}
+
 if test z"$1" = z""
 then
-	fbb $(for i in $(cat); do echo $i | grep http; done)
+	geturls | xargs fbb
 else
-	"$@" $(for i in $(cat); do echo $i | grep http; done)
+	geturls | xargs "$@"
 fi
