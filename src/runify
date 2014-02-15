@@ -1,4 +1,6 @@
 #!/bin/sh
+sed 's/\. */᛫/g' |
+sed 's/ /᛬/g' |
 sed 's/(th)/ᚦ/g' |
 sed 's/(ae)/ᛇ/g' |
 sed 's/(ng)/ᛜ/g' |
@@ -22,6 +24,4 @@ sed 's/e/ᛖ/g' |
 sed 's/m/ᛗ/g' |
 sed 's/l/ᛚ/g' |
 sed 's/o/ᛟ/g' |
-sed 's/d/ᛞ/g' |
-sed 's/ /᛬/g' |
-sed 's/\./᛫/g'
+sed 's/d/ᛞ/g'
