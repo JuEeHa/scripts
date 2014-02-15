@@ -52,6 +52,11 @@ Converts files from own, Markdown based .mdo format to html
 Mothballs dir, then deletes it
 NOTE: hardcoded paths
 
+	runify
+Makes writing runic text on computer less PITA.
+NOTE: Uses elder futhark.
+NOTE: Uses (th) for thurisaz, (ae) for eiwaz and (ng) for ingwaz.
+
 	vidplay vid0 vid1 ... vidN
 Plays videos.
 The video player used is the one specified in $VIDPLAYER. If it is not set, the one specified in ~/.vidplay is used. If that is also unset, mplayer is used. Player arguments may be set using VIDPLAYER_ARGS in the same manner as VIDPLAYER
