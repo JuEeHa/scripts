@@ -6,7 +6,7 @@ all:
 
 install:
 	mkdir -p $(PREFIX)/bin
-	cd src; install yt ytdl aytdl vidplay fbb mdp2html.sh amdtbl.awk ircurls.sh $(PREFIX)/bin
+	cd src; install yt ytdl aytdl vidplay fbb git-commit.sh git-dump.sh mdp2html.sh amdtbl.awk ircurls.sh $(PREFIX)/bin
 
 install-all:
 	mkdir -p $(PREFIX)/bin

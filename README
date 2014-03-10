@@ -29,6 +29,9 @@ NOTE: If $BROWSER and $BROWSER_ARGS are still unset, fbb defaults to `BROWSER=li
 	genpasswd
 Generates a nice throwaway password
 
+	git-dump.sh
+Simple script for reverting all changes in git repo that have not been commited.
+
 	git-commit.sh Commit message
 	branch=gitbranch git-commit.sh Commit message
 A hacky script that commits all changes in dir, then pushes either $branch or master
