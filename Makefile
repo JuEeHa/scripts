@@ -1,13 +1,19 @@
-PREFIX ?= $(HOME)
+DESTDIR     ?=
+PREFIX      ?= $(HOME)
+EXEC_PREFIX ?= $(PREFIX)
+
+BEST_PICKS = amdtbl.awk fbb git-commit.sh git-dump.sh ircurls.sh mdp2html.sh vidplay yt ytdl 
 
 all:
-	@echo PREFIX = $(PREFIX)
-	@echo "do 'make install' to install best picks or 'make install-all' to install everything"
-
+	@echo DESTDIR     = $(DESTDIR)
+	@echo PREFIX      = $(PREFIX)
+	@echo EXEC_PREFIX = $(EXEC_PREFIX)
+	@echo will install to: $(DESTDIR)$(EXEC_PREFIX)/bin
+	@echo "do 'make install' to install best picks ($(BEST_PICKS)) or 'make install-all' to install everything"
 install:
-	mkdir -p $(PREFIX)/bin
-	cd src; install yt ytdl aytdl vidplay fbb git-commit.sh git-dump.sh mdp2html.sh amdtbl.awk ircurls.sh $(PREFIX)/bin
+	mkdir -p $(DESTDIR)$(EXEC_PREFIX)/bin
+	cd src; install $(BEST_PICKS) $(DESTDIR)$(EXEC_PREFIX)/bin
 
 install-all:
-	mkdir -p $(PREFIX)/bin
-	install src/* $(PREFIX)/bin
+	mkdir -p $(DESTDIR)$(EXEC_PREFIX)/bin
+	install src/* $(DESTDIR)$(EXEC_PREFIX)/bin
