@@ -7,12 +7,13 @@ Executes specified cmd when system clock gets HH:MM
 	amdtbl.awk <infile >outfile
 A table extension for Markdown, a fixed version of awk implementation at http://repo.cat-v.org/amdtbl/
 
-	aytdl yturl fname.mp3
-Downloads and converts to mp3 the specified youtube video.
-NOTE: you should execute it on a RAM-based fs
-
-	BUP=bupname bup.sh file0 file1 ... fileN
-Backups stuff to hardcoded dir, change if you want to use.
+	backup.sh
+Does semi-automated backups. Configured by ~/.backupshrc.
+Example of ~/.backupshrc:
+collection dotfiles .links/bookmarks.html .mozilla .vidplay .fbb # creates a txz file with name $(hostname)_dotfiles_$timestamp.tzz than includes the files / directories specified after the name
+remote_scp foohost.net:backups # copies files to foohost.net, asks user for a password
+remote_ssh foohost.net backups_cleanup.sh # runs a backup cleaning script, asks user for a password
+local_cp /mnt/backup/$timestamp/ # copies the files to a mounted disk
 
 	clipb.sh [a] [. text]
 If no arguments are specified, it opens `~/.clipbored`, a "extension of clipboard" file. If "a" is specified, it first does `cat >> ~/.clipbored`. If "." is specified it appends all arguments to .clipbored
