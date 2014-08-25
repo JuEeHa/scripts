@@ -1,5 +1,2 @@
 #!/bin/sh
-for i in "$@"
-do
-	youtube-dl -o '%(id)s.%(ext)s' --no-part "$i"
-done
+youtube-dl -f 18 -o '%(title)s_%(id)s.%(ext)s' --no-part "$@"
