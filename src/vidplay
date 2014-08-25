@@ -3,9 +3,9 @@ test -e $HOME/.vidplay && . $HOME/.vidplay
 
 if test -z "$VIDPLAYER" && test -z "$VIDPLAYER_ARGS"
 then
-	test -z "$MPVO" && MPVO=gl
+	test -z "$MPVO" && MPVO=xv
 	VIDPLAYER=mplayer
-	VIDPLAYER_ARGS="-vo $MPVO -framedrop"
+	VIDPLAYER_ARGS="-vo $MPVO -framedrop -vfm ffmpeg -lavdopts fast:skiploopfilter=all"
 fi
 
 "$VIDPLAYER" $VIDPLAYER_ARGS "$@"
