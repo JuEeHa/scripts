@@ -4,6 +4,12 @@ tmpdir=$(mktemp -d)
 prefix=$(hostname)
 timestamp=$(date +%Y-%m-%d)
 
+die() {
+	echo tmpdir: $tmpdir 1>&2
+	echo "Error: $@" 1>&2
+	exit 1
+}
+
 collection() {
 	cd
 	
@@ -11,10 +17,10 @@ collection() {
 	shift
 	
 	echo "Creating $name"
-	tar cJf "$tmpdir/$name" "$@" 2> /dev/null || exit 1
+	tar cJf "$tmpdir/$name" "$@" 2> /dev/null || die "tar returned $?"
 	
 	cd $tmpdir
-	sha512 -r "$name" >> ${prefix}_sha512_$timestamp || exit 2
+	sha512 -r "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
 }
 
 remote_scp() {
@@ -41,7 +47,7 @@ touch $tmpdir/cmd.sh
 
 cd $tmpdir
 
-sh cmd.sh || exit 3
+sh cmd.sh || die "remote_* or local_* failed"
 
 cd
 rm -r $tmpdir
