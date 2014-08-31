@@ -1,2 +1,2 @@
 #!/bin/sh
-youtube-dl -f 18 -o '%(title)s_%(id)s.%(ext)s' --no-part "$@"
+youtube-dl -f 18 -o '%(title)s-%(id)s.%(ext)s' --no-part "$@"
