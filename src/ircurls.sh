@@ -6,7 +6,7 @@ geturls() {
 
 if test z"$1" = z""
 then
-	geturls | xargs fbb
+	fbb $(geturls)
 else
-	geturls | xargs "$@"
+	"$@" $(geturls)
 fi
