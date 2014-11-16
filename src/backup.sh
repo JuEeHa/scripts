@@ -17,7 +17,7 @@ collection() {
 	shift
 	
 	echo "Creating $name"
-	tar cJf "$tmpdir/$name" "$@" 2> /dev/null || die "tar returned $?"
+	tar cJf "$tmpdir/$name" "$@" || die "tar returned $?"
 	
 	cd $tmpdir
 	sha512 -r "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
