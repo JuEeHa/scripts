@@ -46,6 +46,9 @@ Connects to NASA's horizons database
 Installs the awesome Better Than Wolves Minecraft mod by Flowerchild
 NOTE: hardcoded paths
 
+	ipaify
+Coonverts X-SAMPA to IPA
+
 	ircurls.sh [PROGRAM] [PROGARGS]
 Reads a IRC log dump on stdin, then executes fbb or provided program with all the urls as arguments
 
