@@ -19,7 +19,7 @@ local_cp /mnt/backup/$timestamp/ # copies the files to a mounted disk
 If no arguments are specified, it opens `~/.clipbored`, a "extension of clipboard" file. If "a" is specified, it first does `cat >> ~/.clipbored`. If "." is specified it appends all arguments to .clipbored
 
 	codetodo.sh [dir0 dir1 ... dirN]
-Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo" (.sh) out of code files in either specified directories or current directory.
+Extracts todo messages in form of "/* TODO: foo */" (.c and .h) or "# TODO: foo" (.sh and .py) out of code files in either specified directories or current directory.
 
 	fbb url0 url1 ... urlN
 Opens specified urls, in order.
