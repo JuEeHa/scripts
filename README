@@ -10,7 +10,7 @@ A table extension for Markdown, a fixed version of awk implementation at http://
 	backup.sh
 Does semi-automated backups. Configured by ~/.backupshrc.
 Example of ~/.backupshrc:
-collection dotfiles .links/bookmarks.html .mozilla .vidplay .fbb # creates a txz file with name $(hostname)_dotfiles_$timestamp.tzz than includes the files / directories specified after the name
+collection dotfiles .links/bookmarks.html .mozilla .vidplay .fbb # creates a txz file with name $(hostname)_dotfiles_$timestamp.txz than includes the files / directories specified after the name
 remote_scp foohost.net:backups # copies files to foohost.net, asks user for a password
 remote_ssh foohost.net backups_cleanup.sh # runs a backup cleaning script, asks user for a password
 local_cp /mnt/backup/$timestamp/ # copies the files to a mounted disk
