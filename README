@@ -31,7 +31,7 @@ NOTE: If $BROWSER and $BROWSER_ARGS are still unset, fbb defaults to `BROWSER=li
 Generates a nice throwaway password
 
 	git-dump.sh
-Simple script for reverting all changes in git repo that have not been commited.
+Simple script for reverting all changes in git repo that have not been committed.
 
 	git-commit.sh Commit message
 	branch=gitbranch git-commit.sh Commit message
@@ -47,20 +47,20 @@ Installs the awesome Better Than Wolves Minecraft mod by Flowerchild
 NOTE: hardcoded paths
 
 	ipaify
-Coonverts X-SAMPA to IPA
+Converts X-SAMPA to IPA
 
 	ircurls.sh [PROGRAM] [PROGARGS]
 Reads a IRC log dump on stdin, then executes fbb or provided program with all the urls as arguments
 
 	mdp2html.sh file.mdp
-Converts files from own, Markdown based .mdo format to html
+Converts files from own, Markdown based .mdp format to html
 
 	mothball.sh dir
 Mothballs dir, then deletes it
 NOTE: hardcoded paths
 
 	playlist2vidurls.sh vidurls-file.html
-Convets a downloaded playlist page from youtube to a vidurls file.
+Converts a downloaded playlist page from youtube to a vidurls file.
 NOTE: vidurls-file.html -> vidurls-file
 
 	runify
