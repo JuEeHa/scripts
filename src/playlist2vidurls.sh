@@ -8,5 +8,5 @@ fi
 for i in "$@"
 do
 	echo "$i -> ${i%.html}"
-	lynx -dump "$i" | sed 's,file:///,http://www.youtube.com/,' | egrep 'youtu.*/watch\?v=' | sed 's/^ *[0-9]*\. //;s/&.*$//' | uniq > "${i%.html}" && rm "$i"
+	grep -o 'href="/watch?v=[^&"]*[&"]' "$i" | sed 's,^href="\(.*\)&,http://www.youtube.com\1,' | uniq > "${i%.html}" && rm "$i"
 done
