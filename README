@@ -59,6 +59,10 @@ Converts files from own, Markdown based .mdo format to html
 Mothballs dir, then deletes it
 NOTE: hardcoded paths
 
+	playlist2vidurls.sh vidurls-file.html
+Convets a downloaded playlist page from youtube to a vidurls file.
+NOTE: vidurls-file.html -> vidurls-file
+
 	runify
 Makes writing runic text on computer less PITA.
 NOTE: Uses elder futhark.
@@ -72,6 +76,10 @@ Plays videos.
 The video player used is the one specified in $VIDPLAYER. If it is not set, the one specified in ~/.vidplay is used. If that is also unset, mplayer is used. Player arguments may be set using VIDPLAYER_ARGS in the same manner as VIDPLAYER
 NOTE: Settings in ~/.vidplay take precedence over the environment; ~/.vidplay is actually a shell script, so you can use 'test -z "$VAR" && VAR=value.
 NOTE: If $VIDPLAYER and $VIDPLAYER_ARGS are still unset, vidplay defaults to `VIDPLAYER=mplayer VIDPLAYER_ARGS="-vo $MPVO -framedrop"` (MPVO=gl by default)
+
+	vidurls-dl.sh [number] vidurls-file
+Download number or 5 videos from vidurls-file, and remove them from the file afterwards.
+NOTE: Needs editing to work with GNU sed
 
 	yt yturl0 yturl1 ... yturlN
 Plays youtube videos using youtube-dl and vidplay
