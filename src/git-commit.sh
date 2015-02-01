@@ -1,6 +1,5 @@
 #!/bin/sh
-test -n "$(git ls-files --deleted)" && git rm $(git ls-files --deleted)
-git add .
+git add --all .
 git commit -m "$*"
 test ! -n "$branch" && branch=master
 git push origin $branch
