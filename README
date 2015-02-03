@@ -63,10 +63,9 @@ NOTE: hardcoded paths
 Converts a downloaded playlist page from youtube to a vidurls file.
 NOTE: vidurls-file.html -> vidurls-file
 
-	runify
+	runify [elder | long | short]
 Makes writing runic text on computer less PITA.
-NOTE: Uses elder futhark.
-NOTE: Uses (th) for thurisaz, (ae) for eiwaz and (ng) for ingwaz.
+NOTE: (ae) = ï, (th) = þ, (ng) = ŋ
 
 	txt2html.sh [-d]
 Creates not-so-horrible-looking html from plain text files. -d specifies it to only insert paragraph switch on double newline.

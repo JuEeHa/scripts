@@ -1,27 +1,101 @@
 #!/bin/sh
-sed 's/\. */᛫/g' |
-sed 's/ /᛬/g' |
-sed 's/(th)/ᚦ/g' |
-sed 's/(ae)/ᛇ/g' |
-sed 's/(ng)/ᛜ/g' |
-sed 's/f/ᚠ/g' |
-sed 's/u/ᚢ/g' |
-sed 's/a/ᚨ/g' |
-sed 's/r/ᚱ/g' |
-sed 's/k/ᚲ/g' |
-sed 's/g/ᚷ/g' |
-sed 's/w/ᚹ/g' |
-sed 's/h/ᚺ/g' |
-sed 's/n/ᚾ/g' |
-sed 's/i/ᛁ/g' |
-sed 's/j/ᛃ/g' |
-sed 's/p/ᛈ/g' |
-sed 's/z/ᛉ/g' |
-sed 's/s/ᛊ/g' |
-sed 's/t/ᛏ/g' |
-sed 's/b/ᛒ/g' |
-sed 's/e/ᛖ/g' |
-sed 's/m/ᛗ/g' |
-sed 's/l/ᛚ/g' |
-sed 's/o/ᛟ/g' |
-sed 's/d/ᛞ/g'
+elder() {
+	sed 's/(th)/ᚦ/g;
+	s/(ae)/ᛇ/g;
+	s/(ng)/ᛜ/g;
+	s/f/ᚠ/g;
+	s/u/ᚢ/g;
+	s/þ/ᚦ/g;
+	s/a/ᚨ/g;
+	s/r/ᚱ/g;
+	s/k/ᚲ/g;
+	s/g/ᚷ/g;
+	s/w/ᚹ/g;
+	s/h/ᚺ/g;
+	s/n/ᚾ/g;
+	s/i/ᛁ/g;
+	s/j/ᛃ/g;
+	s/p/ᛈ/g;
+	s/ï/ᛇ/g;
+	s/z/ᛉ/g;
+	s/s/ᛊ/g;
+	s/t/ᛏ/g;
+	s/b/ᛒ/g;
+	s/e/ᛖ/g;
+	s/m/ᛗ/g;
+	s/l/ᛚ/g;
+	s/ŋ/ᛜ/g;
+	s/d/ᛞ/g;
+	s/o/ᛟ/g'
+}
+
+long() {
+	sed 's/(th)/ᚦ/g;
+	s/f/ᚠ/g;
+	s/u/ᚢ/g;
+	s/þ/ᚦ/g;
+	s/o/ᚬ/g;
+	s/r/ᚱ/g;
+	s/k/ᚴ/g;
+	s/h/ᚼ/g;
+	s/n/ᚾ/g;
+	s/i/ᛁ/g;
+	s/a/ᛅ/g;
+	s/s/ᛋ/g;
+	s/t/ᛏ/g;
+	s/b/ᛒ/g;
+	s/m/ᛘ/g;
+	s/l/ᛚ/g;
+	s/R/ᛦ/g;'
+}
+
+short() {
+	sed 's/(th)/ᚦ/g;
+	s/f/ᚠ/g;
+	s/u/ᚢ/g;
+	s/þ/ᚦ/g;
+	s/o/ᚭ/g;
+	s/r/ᚱ/g;
+	s/k/ᚴ/g;
+	s/h/ᚽ/g;
+	s/n/ᚿ/g;
+	s/i/ᛁ/g;
+	s/a/ᛆ/g;
+	s/s/ᛌ/g;
+	s/t/ᛐ/g;
+	s/b/ᛓ/g;
+	s/m/ᛙ/g;
+	s/l/ᛚ/g;
+	s/R/ᛧ/g;'
+}
+punctuation() {
+	sed 's/\. */᛫/g;
+	s/ /᛬/g'
+}
+
+if test $# -eq 0
+then
+	punctuation | elder
+else
+	if test $# -eq 1
+	then
+		case "$1" in
+			elder)
+				punctuation | elder
+				;;
+			long)
+				punctuation | long
+				;;
+			short)
+				punctuation | short
+				;;
+			*)
+				echo "Recognized runic alphabets: elder, long, short" 1>&2
+				exit 1
+				;;
+		esac
+	else
+		echo "Usage: $(basename "$0") [elder | long | short]" 1>&2
+		exit 1
+	fi
+fi
