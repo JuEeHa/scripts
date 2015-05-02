@@ -21,6 +21,7 @@ collection() {
 	
 	cd $tmpdir
 	sha512 -r "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
+	cd
 }
 
 remote_scp() {
