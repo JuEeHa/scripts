@@ -2,6 +2,7 @@
 gettodo() {
 	grep '/\* TODO' "$1"*.c "$1"*.h 2> /dev/null
 	grep '# TODO' "$1"*.sh "$1"*.py 2> /dev/null
+	egrep ';{1,4} TODO' "$1"*.lisp 2> /dev/null
 }
 
 if test z"$1" = z""
