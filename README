@@ -76,8 +76,8 @@ The video player used is the one specified in $VIDPLAYER. If it is not set, the 
 NOTE: Settings in ~/.vidplay take precedence over the environment; ~/.vidplay is actually a shell script, so you can use 'test -z "$VAR" && VAR=value.
 NOTE: If $VIDPLAYER and $VIDPLAYER_ARGS are still unset, vidplay defaults to `VIDPLAYER=mplayer VIDPLAYER_ARGS="-vo $MPVO -framedrop"` (MPVO=gl by default)
 
-	vidurls-dl.sh [number] vidurls-file
-Download number or 1 videos from vidurls-file, and remove them from the file afterwards.
+	vidurls-dl.sh [amount] vidurls-file
+Download amount or 1 videos from vidurls-file, and remove them from the file afterwards.
 NOTE: Needs editing to work with GNU sed
 
 	yt yturl0 yturl1 ... yturlN
