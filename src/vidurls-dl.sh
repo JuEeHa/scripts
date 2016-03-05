@@ -1,7 +1,7 @@
 #!/bin/sh
 if test $# -ne 1 -a $# -ne 2
 then
-	echo "Usage: $(basename "$0") file" 1>&2
+	echo "Usage: $(basename "$0") [amount] file" 1>&2
 	exit 1
 fi
 
