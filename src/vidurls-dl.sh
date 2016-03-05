@@ -5,7 +5,7 @@ then
 	exit 1
 fi
 
-numvids=5
+numvids=1
 if test $# -eq 2
 then
 	numvids="$1"

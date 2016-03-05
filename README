@@ -77,7 +77,7 @@ NOTE: Settings in ~/.vidplay take precedence over the environment; ~/.vidplay is
 NOTE: If $VIDPLAYER and $VIDPLAYER_ARGS are still unset, vidplay defaults to `VIDPLAYER=mplayer VIDPLAYER_ARGS="-vo $MPVO -framedrop"` (MPVO=gl by default)
 
 	vidurls-dl.sh [number] vidurls-file
-Download number or 5 videos from vidurls-file, and remove them from the file afterwards.
+Download number or 1 videos from vidurls-file, and remove them from the file afterwards.
 NOTE: Needs editing to work with GNU sed
 
 	yt yturl0 yturl1 ... yturlN
