@@ -20,7 +20,7 @@ paragraphs() {
 links() {
 	# If ']' is included it should go first, a quirk of how regexps work
 	terminators="])}<>; "
-	sed 's,https?://[^'"$terminators"']*,<a href="&">&</a>,'
+	sed -E 's,https?://[^'"$terminators"']*,<a href="&">&</a>,g'
 }
 
 process() {
