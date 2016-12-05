@@ -2,8 +2,9 @@
 # It will not look pretty but will be usable
 
 chars() {
-	sed 's,<,\&lt;,;
-	     s,>,\&gt;,;'
+	sed 's,&,\&amp;,g;
+	     s,<,\&lt;,g;
+	     s,>,\&gt;,g;'
 }
 
 paragraphs() {
