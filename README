@@ -43,7 +43,7 @@ Connects to NASA's horizons database
 	install-btw [VERSION]
 	install-btw-client.sh [VERSION]
 	install-btw-server.sh [VERSION]
-Installs the awesome Better Than Wolves Minecraft mod by Flowerchild
+Installs the Better Than Wolves Minecraft mod by Flowerchild
 NOTE: hardcoded paths
 
 	ipaify
