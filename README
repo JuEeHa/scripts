@@ -63,7 +63,7 @@ NOTE: hardcoded paths
 Converts a downloaded playlist page from youtube to a vidurls file.
 NOTE: vidurls-file.html -> vidurls-file
 
-	runify [elder | long | short]
+	runify [elder | long | short | medieval]
 Makes writing runic text on computer less PITA.
 NOTE: (ae) = ï, (th) = þ, (ng) = ŋ
 

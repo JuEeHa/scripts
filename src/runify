@@ -68,6 +68,37 @@ short() {
 	s/l/ᛚ/g;
 	s/R/ᛧ/g;'
 }
+medieval() {
+	sed 's/a/ᛆ/g;
+	     s/b/ᛒ/g;
+	     s/c/ᛍ/g;
+	     s/d/ᛑ/g;
+	     s/ð/ᚧ/g;
+	     s/e/ᛂ/g;
+	     s/f/ᚠ/g;
+	     s/g/ᚵ/g;
+	     s/h/ᚼ/g;
+	     s/i/ᛁ/g;
+	     s/k/ᚴ/g;
+	     s/l/ᛚ/g;
+	     s/m/ᛘ/g;
+	     s/n/ᚿ/g;
+	     s/o/ᚮ/g;
+	     s/p/ᛔ/g;
+	     s/q/ᛩ/g;
+	     s/r/ᚱ/g;
+	     s/s/ᛋ/g;
+	     s/t/ᛐ/g;
+	     s/u/ᚢ/g;
+	     s/v/ᚡ/g;
+	     s/w/ᚥ/g;
+	     s/x/ᛪ/g;
+	     s/y/ᛦ/g;
+	     s/z/ᛎ/g;
+	     s/þ/ᚦ/g;
+	     s/[äæ]/ᛅ/g;
+	     s/[öø]/ᚯ/g'
+}
 punctuation() {
 	sed 's/\. */᛫/g;
 	s/ /᛬/g'
@@ -89,13 +120,16 @@ else
 			short)
 				punctuation | short
 				;;
+			medieval)
+				punctuation | medieval
+				;;
 			*)
-				echo "Recognized runic alphabets: elder, long, short" 1>&2
+				echo "Recognized runic alphabets: elder, long, short, medieval" 1>&2
 				exit 1
 				;;
 		esac
 	else
-		echo "Usage: $(basename "$0") [elder | long | short]" 1>&2
+		echo "Usage: $(basename "$0") [elder | long | short | medieval]" 1>&2
 		exit 1
 	fi
 fi
