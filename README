@@ -67,6 +67,11 @@ NOTE: vidurls-file.html -> vidurls-file
 Makes writing runic text on computer less PITA.
 NOTE: (ae) = ï, (th) = þ, (ng) = ŋ
 
+	screenshot.sh [--active|--full|--select|-afs] [--filename <filename> | -o <filename>] [--wait <seconds>|-w <seconds>]
+Screenshot utility using maim and xdotool.
+Supprts 3 screenshot modes: active (active window), full (full screen), and select (select what to screenshot)
+By default writes to $(date +%Y-%m-%d_%H%M%S)_screenshot.png
+
 	txt2html.sh [-d]
 Creates not-so-horrible-looking html from plain text files. -d specifies it to only insert paragraph switch on double newline.
 

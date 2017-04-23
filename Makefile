@@ -2,7 +2,7 @@ DESTDIR     ?=
 PREFIX      ?= $(HOME)
 EXEC_PREFIX ?= $(PREFIX)
 
-BEST_PICKS = amdtbl.awk fbb git-commit.sh git-dump.sh ircurls.sh mdp2html.sh vidplay yt ytdl 
+BEST_PICKS = amdtbl.awk fbb git-commit.sh git-dump.sh ircurls.sh mdp2html.sh vidplay yt ytdl screenshot.sh
 
 all:
 	@echo DESTDIR     = $(DESTDIR)
