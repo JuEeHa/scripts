@@ -3,101 +3,24 @@ elder() {
 	sed 's/(th)/ᚦ/g;
 	s/(ae)/ᛇ/g;
 	s/(ng)/ᛜ/g;
-	s/f/ᚠ/g;
-	s/u/ᚢ/g;
-	s/þ/ᚦ/g;
-	s/a/ᚨ/g;
-	s/r/ᚱ/g;
-	s/k/ᚲ/g;
-	s/g/ᚷ/g;
-	s/w/ᚹ/g;
-	s/h/ᚺ/g;
-	s/n/ᚾ/g;
-	s/i/ᛁ/g;
-	s/j/ᛃ/g;
-	s/p/ᛈ/g;
-	s/ï/ᛇ/g;
-	s/z/ᛉ/g;
-	s/s/ᛊ/g;
-	s/t/ᛏ/g;
-	s/b/ᛒ/g;
-	s/e/ᛖ/g;
-	s/m/ᛗ/g;
-	s/l/ᛚ/g;
-	s/ŋ/ᛜ/g;
-	s/d/ᛞ/g;
-	s/o/ᛟ/g'
+	y/fuþarkgwhnijpïzstbemlŋdo/ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛈᛇᛉᛊᛏᛒᛖᛗᛚᛜᛞᛟ/'
 }
 
 long() {
 	sed 's/(th)/ᚦ/g;
-	s/f/ᚠ/g;
-	s/u/ᚢ/g;
-	s/þ/ᚦ/g;
-	s/o/ᚬ/g;
-	s/r/ᚱ/g;
-	s/k/ᚴ/g;
-	s/h/ᚼ/g;
-	s/n/ᚾ/g;
-	s/i/ᛁ/g;
-	s/a/ᛅ/g;
-	s/s/ᛋ/g;
-	s/t/ᛏ/g;
-	s/b/ᛒ/g;
-	s/m/ᛘ/g;
-	s/l/ᛚ/g;
-	s/R/ᛦ/g;'
+	y/fuþoąrkhniastbmlR/ᚠᚢᚦᚬᚬᚱᚴᚼᚾᛁᛅᛋᛏᛒᛘᛚᛦ/'
 }
 
 short() {
 	sed 's/(th)/ᚦ/g;
-	s/f/ᚠ/g;
-	s/u/ᚢ/g;
-	s/þ/ᚦ/g;
-	s/o/ᚭ/g;
-	s/r/ᚱ/g;
-	s/k/ᚴ/g;
-	s/h/ᚽ/g;
-	s/n/ᚿ/g;
-	s/i/ᛁ/g;
-	s/a/ᛆ/g;
-	s/s/ᛌ/g;
-	s/t/ᛐ/g;
-	s/b/ᛓ/g;
-	s/m/ᛙ/g;
-	s/l/ᛚ/g;
-	s/R/ᛧ/g;'
+	y/fuþoąrkhniastbmlR/ᚠᚢᚦᚭᚭᚱᚴᚽᚿᛁᛆᛌᛐᛓᛙᛚᛧ/'
 }
 medieval() {
-	sed 's/a/ᛆ/g;
-	     s/b/ᛒ/g;
-	     s/c/ᛍ/g;
-	     s/d/ᛑ/g;
-	     s/ð/ᚧ/g;
-	     s/e/ᛂ/g;
-	     s/f/ᚠ/g;
-	     s/g/ᚵ/g;
-	     s/h/ᚼ/g;
-	     s/i/ᛁ/g;
-	     s/k/ᚴ/g;
-	     s/l/ᛚ/g;
-	     s/m/ᛘ/g;
-	     s/n/ᚿ/g;
-	     s/o/ᚮ/g;
-	     s/p/ᛔ/g;
-	     s/q/ᛩ/g;
-	     s/r/ᚱ/g;
-	     s/s/ᛋ/g;
-	     s/t/ᛐ/g;
-	     s/u/ᚢ/g;
-	     s/v/ᚡ/g;
-	     s/w/ᚥ/g;
-	     s/x/ᛪ/g;
-	     s/y/ᛦ/g;
-	     s/z/ᛎ/g;
-	     s/þ/ᚦ/g;
-	     s/[äæ]/ᛅ/g;
-	     s/[öø]/ᚯ/g'
+	sed 's/(dh)/ᚧ/g;
+	     s/(th)/ᚦ/g;
+	     s/(ae)/ᛅ/g;
+	     s/(oe)/ᚯ/g;
+	     y/abcdðefghiklmnopqrstuvwxyzþäæöø/ᛆᛒᛍᛑᚧᛂᚠᚵᚼᛁᚴᛚᛘᚿᚮᛔᛩᚱᛋᛐᚢᚡᚥᛪᛦᛎᚦᛅᛅᚯᚯ/'
 }
 punctuation() {
 	sed 's/\. */᛫/g;
