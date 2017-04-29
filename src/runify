@@ -1,20 +1,22 @@
 #!/bin/sh
+
 elder() {
 	sed 's/(th)/ᚦ/g;
-	s/(ae)/ᛇ/g;
-	s/(ng)/ᛜ/g;
-	y/fuþarkgwhnijpïzstbemlŋdo/ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛈᛇᛉᛊᛏᛒᛖᛗᛚᛜᛞᛟ/'
+	     s/(ae)/ᛇ/g;
+	     s/(ng)/ᛜ/g;
+	     y/fuþarkgwhnijpïzstbemlŋdo/ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛈᛇᛉᛊᛏᛒᛖᛗᛚᛜᛞᛟ/'
 }
 
 long() {
 	sed 's/(th)/ᚦ/g;
-	y/fuþoąrkhniastbmlR/ᚠᚢᚦᚬᚬᚱᚴᚼᚾᛁᛅᛋᛏᛒᛘᛚᛦ/'
+	     y/fuþoąrkhniastbmlR/ᚠᚢᚦᚬᚬᚱᚴᚼᚾᛁᛅᛋᛏᛒᛘᛚᛦ/'
 }
 
 short() {
 	sed 's/(th)/ᚦ/g;
-	y/fuþoąrkhniastbmlR/ᚠᚢᚦᚭᚭᚱᚴᚽᚿᛁᛆᛌᛐᛓᛙᛚᛧ/'
+	     y/fuþoąrkhniastbmlR/ᚠᚢᚦᚭᚭᚱᚴᚽᚿᛁᛆᛌᛐᛓᛙᛚᛧ/'
 }
+
 medieval() {
 	sed 's/(dh)/ᚧ/g;
 	     s/(th)/ᚦ/g;
@@ -22,37 +24,21 @@ medieval() {
 	     s/(oe)/ᚯ/g;
 	     y/abcdðefghiklmnopqrstuvwxyzþäæöø/ᛆᛒᛍᛑᚧᛂᚠᚵᚼᛁᚴᛚᛘᚿᚮᛔᛩᚱᛋᛐᚢᚡᚥᛪᛦᛎᚦᛅᛅᚯᚯ/'
 }
+
 punctuation() {
 	sed 's/\. */᛫/g;
-	s/ /᛬/g'
+	     s/ /᛬/g'
 }
 
-if test $# -eq 0
-then
-	punctuation | elder
-else
-	if test $# -eq 1
-	then
-		case "$1" in
-			elder)
-				punctuation | elder
-				;;
-			long)
-				punctuation | long
-				;;
-			short)
-				punctuation | short
-				;;
-			medieval)
-				punctuation | medieval
-				;;
-			*)
-				echo "Recognized runic alphabets: elder, long, short, medieval" 1>&2
-				exit 1
-				;;
-		esac
-	else
-		echo "Usage: $(basename "$0") [elder | long | short | medieval]" 1>&2
-		exit 1
-	fi
-fi
+usage() {
+	echo "usage: runify [elder|long|short|medieval]" 1>&2
+	exit 1
+}
+
+if test $# -gt 1; then usage; fi
+if test $# -eq 0; then set -- elder; fi
+
+case "$1" in
+	elder|long|short|medieval) punctuation | $1;;
+	*) usage;;
+esac
