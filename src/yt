@@ -1,5 +1,0 @@
-#!/bin/sh
-for i in "$@"
-do
-	vidplay $(youtube-dl -g -f 18 "$i")
-done
