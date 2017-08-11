@@ -1,9 +1,6 @@
 The most useful of my scripts in ~/bin, use at your own risk.
 Most scripts are unmodified, however some have been changed to work with graphical environment.
 
-	alert.sh HH:MM "cmd"
-Executes specified cmd when system clock gets HH:MM
-
 	amdtbl.awk <infile >outfile
 A table extension for Markdown, a fixed version of awk implementation at http://repo.cat-v.org/amdtbl/
 
