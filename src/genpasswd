@@ -1,2 +1,3 @@
 #!/bin/sh
-dd if=/dev/random of=/dev/stdout bs=512 count=1 2> /dev/null | sha1sum | cut -d ' ' -f 1
+dd if=/dev/urandom of=/dev/stdout bs=512 2> /dev/null | base64 | tr -d '+/=\n' | head -c 32
+echo
