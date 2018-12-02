@@ -12,15 +12,34 @@ die() {
 
 collection() {
 	cd
-	
+
 	name="${prefix}_$1_$timestamp.txz"
 	shift
-	
+
 	echo "Creating $name"
 	tar cJf "$tmpdir/$name" "$@" || die "tar returned $?"
-	
+
 	cd $tmpdir
-	sha512 -r "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
+	sha512sum "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
+	cd
+}
+
+encrypted_collection() {
+	cd
+
+	test -z "$passphrase_file" && die "No passphrase_file specified"
+
+	tarname="${prefix}_$1_$timestamp.txz"
+	name="${prefix}_$1_${timestamp}_aes256.txz"
+	shift
+
+	echo "Creating $name (encrypted)"
+	tar cJf "$tmpdir/$tarname" "$@" || die "tar returned $?"
+
+	cd $tmpdir
+	openssl enc -aes-256-cbc -md sha256 -pass file:"$passphrase_file" -in "$tarname" -out "$name" || die "openssl returned $?"
+	rm "$tarname"
+	sha512sum "$name" >> ${prefix}_sha512_$timestamp || die "sha512 returned $?"
 	cd
 }
 
