@@ -11,7 +11,7 @@ BEGIN {
     intable=1
     print "<tr>"
 
-    $0 = substr($0, 2, length($0)-2)
+    $0 = substr($0, 3, length($0)-4)
     split($0, a)
     for(i in a) {
         align="center"
