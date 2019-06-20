@@ -25,7 +25,7 @@ links() {
 }
 
 process() {
-	chars | paragraphs | links
+	links | chars | paragraphs
 }
 
 para_on_nl=true

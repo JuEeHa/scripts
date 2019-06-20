@@ -11,7 +11,7 @@ usage() {
 
 filename=""
 wait_time=""
-mode="full"
+mode="select"
 options="--format=png"
 
 eval set -- "$(getopt -s sh -l 'filename:,wait:,active,full,select,help' 'o:w:afs' "$@")" || usage 1 >&2
@@ -62,7 +62,7 @@ fi
 
 case "$mode" in
 	active)
-		maim $options --windowid=$(xdotool getactivewindow) "$filename"
+		maim $options --window=$(xdotool getactivewindow) "$filename"
 		;;
 	full)
 		maim $options "$filename"
