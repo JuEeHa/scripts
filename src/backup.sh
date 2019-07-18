@@ -43,14 +43,20 @@ encrypted_collection() {
 	cd
 }
 
+sign() {
+	cd $tmpdir
+	signify-openbsd -S -e -s "$1" -m ${prefix}_sha512_$timestamp -x ${prefix}_sha512_$timestamp.sig || die "signify-openbsd returned $?"
+	cd
+}
+
 remote_scp() {
 	echo "echo 'Copying (scp) to $(echo $1 | cut -d : -f 1)'" >> $tmpdir/cmd.sh
-	echo "scp *.txz ${prefix}_sha512_$timestamp $1/ || exit 1" >> $tmpdir/cmd.sh
+	echo "scp *.txz ${prefix}_sha512_$timestamp* $1/ || exit 1" >> $tmpdir/cmd.sh
 }
 
 remote_scp_pubkey() {
 	echo "echo 'Copying (scp) to $(echo $1 | cut -d : -f 1)'" >> $tmpdir/cmd.sh
-	echo "scp -i '$2' *.txz ${prefix}_sha512_$timestamp $1/ || exit 1" >> $tmpdir/cmd.sh
+	echo "scp -i '$2' *.txz ${prefix}_sha512_$timestamp* $1/ || exit 1" >> $tmpdir/cmd.sh
 }
 
 remote_ssh() {
@@ -71,7 +77,7 @@ remote_ssh_pubkey() {
 
 local_cp() {
 	echo "echo 'Copying (cp) to $1'" >> $tmpdir/cmd.sh
-	echo "cp *.txz ${prefix}_sha512_$timestamp $1/ || exit 1" >> $tmpdir/cmd.sh
+	echo "cp *.txz ${prefix}_sha512_$timestamp* $1/ || exit 1" >> $tmpdir/cmd.sh
 }
 
 touch $tmpdir/${prefix}_sha512_$timestamp
